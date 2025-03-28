@@ -21,6 +21,11 @@
     "ej03": "node ./src/Ej3.js",
     "ej04": "node ./src/Ej4.js",
     "ej05": "node ./src/Ej5.js",
-    "ej06": "node ./src/Ej6.js"
+    "ej06": "node ./src/Ej6.js",
+    "ej07": "node ./src/Ej7.js"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "currency-map-country": "^1.0.12"
   }
 }
