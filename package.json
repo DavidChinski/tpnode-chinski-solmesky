@@ -20,6 +20,7 @@
     "ej02": "node ./src/Ej2.js",
     "ej03": "node ./src/Ej3.js",
     "ej04": "node ./src/Ej4.js",
-    "ej05": "node ./src/Ej5.js"
+    "ej05": "node ./src/Ej5.js",
+    "ej06": "node ./src/Ej6.js"
   }
 }
