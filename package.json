@@ -1,0 +1,23 @@
+{
+  "name": "tpnode-chinski-solmesky",
+  "version": "1.0.0",
+  "description": "tp",
+  "homepage": "https://github.com/DavidChinski/tpnode-chinski-solmesky#readme",
+  "bugs": {
+    "url": "https://github.com/DavidChinski/tpnode-chinski-solmesky/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidChinski/tpnode-chinski-solmesky.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ej01": "node ./src/Ej1.js",
+    "ej02": "node ./src/Ej2.js",
+    "ej03": "node ./src/Ej3.js"
+  }
+}
