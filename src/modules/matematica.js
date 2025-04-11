@@ -3,18 +3,19 @@ const PI = 3.14;
 let array = ["dos","cuatro","ocho","diez"]
 function sumar(x, y) 
 {
-    return x+y;
+    return parseInt(x) + parseInt(y);
 }
 function restar(x, y) 
 {
-    return x-y;
+    return parseInt(x) - parseInt(y);
 }
 
 const multiplicar = (a, b) => {
-    return a*b;
+    return parseInt(a) * parseInt(b);
 };
 const dividir = (a, b) => {
-    return a/b;
+    return parseInt(a) / parseInt(b);
    };
 // Exporto todo lo que yo quiero exponer del módulo hacia el exterior.
-export {PI, sumar, array};
+export {sumar, restar, multiplicar, dividir};
+                                      
