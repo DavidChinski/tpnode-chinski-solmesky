@@ -24,7 +24,7 @@
     "ej06": "node ./src/Ej6.js",
     "ej07": "node ./src/Ej7.js",
     "ej08": "node ./src/Ej8.js",
-    "server":"node ./src/server.js"
+    "server": "node ./src/server.js"
   },
   "dependencies": {
     "axios": "^1.8.4",

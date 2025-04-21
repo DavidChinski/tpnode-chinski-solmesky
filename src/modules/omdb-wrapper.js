@@ -1,14 +1,14 @@
 import axios from "axios";
 const APIKEY = "54fc19ed";
 
-const OMDBSearchByPage = async (searchText, page = 1) => {
+const OMDBSearchByPage = async (texto, pagina) => {
     let returnObject = {
         respuesta : false,
         cantidadTotal : 0,
         datos : []
     };
 
-    const requestString = `http://www.omdbapi.com/?apikey=54fc19ed&s=${searchText}&page=${page}`;
+    const requestString = `http://www.omdbapi.com/?apikey=54fc19ed&s=${texto}&page=${pagina}`;
     const apiResponse = await axios.get(requestString);
         returnObject.respuesta = apiResponse.data;
         

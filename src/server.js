@@ -67,9 +67,41 @@ app.get('/matematica/dividir', (req,res) => {
     
 })
 
+//c1
 
+app.get('/omdb/searchbypage' , async (req,res) => {
+    let {texto, pagina} = req.query
+    try {
+        const result = await OMDBSearchByPage(texto, pagina);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: 'Error recolectando datos de la api' });
+    }
 
+    res.status(200).json(results)
+})
 
+//c2
+app.get('/omdb/searchcomplete', async (req, res) => {
+    const { search } = req.query;
+    try {
+        const result = await OMDBSearchComplete(search);
+        res.status(200).json(result);
+    } catch (error) {
+           res.status(500).json({ error: 'Error recolectando datos de la api' });
+    }
+});
+
+// c3
+app.get('/omdb/getbyomdbid', async (req, res) => {
+    const { imdbID } = req.query;
+    try {
+        const result = await OMDBGetByImdbID(imdbID );
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: 'Error recolectando datos desde la api' });
+    }
+});
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
