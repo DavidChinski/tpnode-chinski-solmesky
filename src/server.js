@@ -102,6 +102,75 @@ app.get('/omdb/getbyomdbid', async (req, res) => {
         res.status(500).json({ error: 'Error recolectando datos desde la api' });
     }
 });
+
+//D1
+
+const alumnosArray = [];
+alumnosArray.push(new Alumno("Esteban Dido"  , "22888444", 20));
+alumnosArray.push(new Alumno("Matias Queroso", "28946255", 51));
+alumnosArray.push(new Alumno("Elba Calao"    , "32623391", 18));
+
+
+app.get('/alumnos', async (req, res) => {
+    res.status(200).json({
+        alumnosArray
+    });
+});
+
+//D2
+
+app.get('/alumnos/:dni', async (req, res) => {
+    const dni = req.params.dni;
+
+    const alumnoEncontrado = alumnosArray.find(alumno => alumno.dni === dni);
+
+    if (alumnoEncontrado) {
+        res.status(200).json(alumnoEncontrado);
+    } else {
+        res.status(404).json({ mensaje: "Alumno no encontrado" });
+    }
+});
+
+//d3
+
+app.post('/alumnos', (req, res) => {
+    const { username, dni, edad } = req.body;
+
+    if (!username || !dni || !edad) {
+        return res.status(400).json({ mensaje: "Faltan datos del alumno" });
+    }
+
+    const nuevoAlumno = new Alumno(username, dni, edad);
+
+    alumnosArray.push(nuevoAlumno);
+
+    res.status(201).json({
+        alumno: nuevoAlumno
+    });
+});
+
+//d4
+
+app.delete('/alumnos', (req, res) => {
+    const { dni } = req.body;
+    if (!dni) {
+        return res.status(400).json({ mensaje: "DNI nulo" });
+    }
+
+    const index = alumnosArray.findIndex(alumno => alumno.dni === dni);
+    
+    if (index === -1) {
+        return res.status(404).json({ mensaje: "Alumno no encontrado" });
+    }
+    alumnosArray.splice(index, 1);
+    res.status(200).json({ mensaje: "Alumno eliminado correctamente" });
+});
+
+//e1
+
+
+
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
